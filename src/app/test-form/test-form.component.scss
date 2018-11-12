@@ -1,0 +1,176 @@
+        .form-test {
+            background: #fff;
+            border: 1px solid #eee;
+            //border-radius: 10px;
+            padding-bottom: 30px;
+            border-top: #00a3e0 4px solid;
+            .error-msg {
+                font-size: 1em;
+                font-weight: 500;
+                color: red;
+                margin-top: -10px;
+            }
+            .title {
+                letter-spacing: 2px;
+                margin-top: 10px;
+                font-size: 2.4em;
+                color: #000;
+                font-weight: 300;
+            }
+            .label {
+                color: #000;
+                text-align: right;
+                font-size: 1.3em;
+                padding-right: 40px;
+                label {
+                  font-weight: 500;
+                }
+                .tool-tip {
+                    display: inline-block;
+                    top: 17px;
+                    left: 5px;
+                    position: relative;
+                }
+            }
+            input,
+            select {
+                width: 100%;
+                margin-top: 20px;
+                //border-radius: 8px;
+                border: 2px solid #d0d0ce;
+                height: 35px;
+                background: transparent;
+                padding: 0 10px;
+                color: #000;
+
+                option {
+                    background: #ffffff;
+                }
+            }
+            .form-test-dependancies {
+                margin: 20px 0;
+                text-align: center;
+                color: #000;
+                font-weight: 700;
+                 a {
+                    color: #00a3e0;
+                 }
+            }
+            .form-test-uploads,
+            .form-final-uploads {
+                margin-top: 40px;
+                color: #000;
+                font-weight: 500;
+                font-size: 1.3em;
+                .upload-option {
+                    margin-top: 15px;
+                    text-align: right;
+                    .review-upload {
+                        display: flex;
+                        font-weight: 700;
+
+                        .upload-tick {
+                            background: url('../../assets/icons/check-mark.svg') no-repeat;
+                            width: 24px;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                input {
+                    margin-top: 0;
+                    width: 100%;
+                    padding: 5px;
+                }
+                .terms {
+                    color: #000;
+                    margin-top:15px;
+                    input[type=checkbox] {
+                        width: 15px;
+                        height: 20px;
+                        position: relative;
+                        top: 5px;
+                        right: 5px;
+                    }
+                }
+                button {
+                    width: 80%;
+                    margin: 30px 0;
+                    font-size: 1.2em;
+                    color: #ffffff;
+                    font-weight: 300;
+                    background: #00a3e0;
+                    border-radius: 0;
+                    padding: 15px 0;
+                    letter-spacing: 2px;
+                    outline: none;
+                }
+                button:disabled {
+                    background: #cccccc;
+                }
+            }
+            .form-test-results {
+                margin-top: 40px;
+                .terms-conditions {
+                    color: #000;
+                    font-weight: 700;
+                    input[type=checkbox] {
+                        width: 15px;
+                        height: 20px;
+                        position: relative;
+                        top: 5px;
+                        right: 5px;
+                    }
+                }
+                button {
+                    width: 80%;
+                    margin: 30px 0;
+                    font-size: 1.2em;
+                    color: #ffffff;
+                    font-weight: 300;
+                    background: #00a3e0;
+                    border-radius: 0;
+                    padding: 15px 0;
+                    letter-spacing: 1px;
+                    outline: none;
+                }
+                button:disabled {
+                    background: #cccccc;
+                }
+            }
+            .tool-tip {
+                background: url('../../assets/icons/tool-tip.svg');
+                width: 25px;
+                height: 25px;
+            }
+            @media(max-width: 767px) {
+                margin: -80px 0;
+                .label, .header {
+                    text-align: left;
+                    margin-bottom: 5px;
+                }
+                .form-test-uploads,
+                .form-final-uploads {
+                    margin-top: 15px;
+                }
+                .form-test-results button,
+                .form-test-uploads button {
+                    width: 100%;
+                }
+                .terms {
+                    margin-top: 15px;
+                    input[type=checkbox] {
+                        width: 15px;
+                        height: 20px;
+                        position: relative;
+                        top: 5px;
+                        right: 5px;
+                    }
+                }
+                input,
+                select {
+                    margin-top: 5px;
+            }
+                
+            }
+        }
+       

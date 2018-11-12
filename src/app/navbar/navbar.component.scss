@@ -1,0 +1,58 @@
+.app-header {
+    background: #000;
+    height: 75px;
+    color: #ffffff;
+    padding-top: 10px;
+    .title {
+      background: url('../../assets/icons/prazu-black.png') no-repeat 25px;
+      background-size: contain;
+      height: 50px;
+        margin-left: 40px;
+        a {
+            font-size: 2em;
+            letter-spacing: 16px;
+            font-weight: 700;
+            color: #AACB2F;
+            text-decoration: none;
+        }
+    }
+    .nav-items {
+        font-size: 1.2em;
+        text-align: right;
+        padding-top: 20px;
+        a {
+            color: #ffffff;
+            margin: 0px 40px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            cursor: pointer;
+            padding-bottom: 10px;
+        }
+        a.btn {
+          background: #86BC25;
+          color: #000000;
+          font-weight: 700;
+          margin-top: -10px;
+          padding: 10px 15px;
+        }
+        a.activated{
+          border-bottom: 5px solid #83BB23;
+        }
+    }
+    @media(max-width: 767px) {
+        .title {
+            margin-left: 2px; 
+        } 
+        .nav-items {
+            a{
+                margin: 0px 20px; 
+            }
+            .welcome {
+                float: left;
+            }
+            a.btn {
+                margin: -10px;
+            }
+        }
+    }
+}

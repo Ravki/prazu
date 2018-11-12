@@ -1,0 +1,57 @@
+
+<div class="row" style="margin-top: -45px;">
+    <div class="col-xs-12 col-sm-offset-1 col-sm-10 results-container">
+      <div class="row">
+        <div class="col-sm-12 title text-center">
+          TEST RESULTS
+        </div>
+        <div class="col-sm-12 chart">
+          <div class="row">
+            <div class="col-sm-5">
+              <jqxChart
+                  [width]="getWidth()" [height]="300"
+                  [title]="'Test Summary'"
+                  [description]="''"
+                  [showLegend]="true" [enableAnimations]="true" [padding]="padding"
+                  [titlePadding]="titlePadding" [source]="summaryChart" [legendLayout]="legendLayout"
+                  [showBorderLine]="true" [seriesGroups]="seriesGroups" [columnSeriesOverlap]="false">
+              </jqxChart>
+            </div>
+            <div class="col-sm-5 col-sm-push-2 pass-board">
+              <div class="title">Pass Percentage</div>
+              <div class="pass-percent">{{passPerecent}}<span class="percent">%</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 chart">
+          <jqxChart
+            [width]="getWidth()" [height]="500"
+            [title]="'Drill Down Analysis of Test Results'" [description]="''"
+            [enableAnimations]="true" [showLegend]="true" [padding]="padding1"
+            [titlePadding]="titlePadding1" [source]="drillDownChart"
+            [valueAxis]="valueAxis" [seriesGroups]="seriesGroups1" [colorScheme]="'scheme01'">
+          </jqxChart>
+        </div>
+        <div class="col-xs-12 col-sm-12 result-box">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 result results-button">
+                <p class="result-text text-center">Click here to download complete test results.</p>
+                <div class="col-xs-offset-0 col-xs-12 col-lg-offset-3 col-lg-6 route-button">
+      -         <a href="../../assets/downloadables/SeleniumDependencies.zip" (click)="onDownload()" target="_self" class="btn">Download Result <span class="icon"></span></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 result return-form text-center">
+                <p class="result-text text-center">Want to test again? Return to the Dashboard.</p>
+                <div class="col-xs-offset-0 col-xs-12 col-lg-offset-3 col-lg-6 route-button">
+        -         <a (click)="navigateToDashboard()" class="btn">Dashboard</a>
+                </div>
+            </div>
+          </div>
+        <div>
+      </div>
+    </div>
+    <div class="share-report">
+      <div class="icon"></div>
+      <div class="text">Share Report</div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+.results-container {
+	.title {
+		font-size: 2.4em;
+				color: #000;
+				font-weight: 300;
+				letter-spacing: 2px;
+	}
+	.chart {
+		margin-top: 20px;
+		// outline: none;
+		// border: 1px solid transparent;
+	}
+	.pass-board {
+		background: #fff;
+		border: 1px solid rgb(188, 188, 188);
+		min-height: 300px;
+		margin: 0 -15px;
+		.title {
+			font-size: 1.1em;
+			font-weight: 700;
+			text-align: center;
+			letter-spacing: 1px;
+			position: relative;
+			top: 3px;
+			color: #000;
+		}
+		.pass-percent {
+			font-size: 7em;
+			font-weight: 300;
+			color: #9fda3a;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 250px;
+			letter-spacing: 1px;
+				.percent {
+					font-size: 50px;
+				}
+		}		
+	}
+	.result-box {
+		padding: 30px;
+		background: #fff;
+		border: 1px sold #eee;
+		margin-top: 25px;
+		border-top: 4px solid #83BB23;
+
+		.results-button {
+			border-right: #eee 2px solid;
+		}
+
+		a {
+			display: block;
+		}
+
+		.result-text {
+			font-size: 1.5em;
+			font-weight: 300;
+			margin-bottom: 30px;
+		}
+
+		.btn {
+			font-size: 1.2em;
+			color: #ffffff;
+			font-weight: 300;
+			background: #83BB23;
+			border-radius: 0;
+			padding: 15px 25px;
+			letter-spacing: 1px;
+			outline: none;
+		}
+		.icon {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+			background: url('../../assets/icons/download.svg') no-repeat;
+		}
+	}
+	@media(max-width: 767px) {
+		.result-box {
+			padding: 10px;
+			.results-button {
+				border-right: none;
+				margin-bottom: 30px;
+			}
+			.result-text {
+				margin-bottom: 15px;
+			}
+			.route-button {
+				margin-top: -30px;
+			}
+		}
+	}
+}
+.share-report {
+	position: fixed;
+	top: 90px;
+	right: 15px;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: 700;
+	font-size: 1em;
+	font-family: fantasy;
+  cursor: pointer;
+	.icon {
+		background: url('../../assets/icons/mail_open.png') no-repeat;
+		height: 65px;
+		width: 65px;
+		background-size: cover;
+	}
+}

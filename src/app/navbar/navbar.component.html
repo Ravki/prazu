@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-sm-12 app-header">
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 title">
+            </div>
+            <div *ngIf="isRoot" class="col-xs-8 col-sm-8 pull-right nav-items">
+                <a routerLink="" [class.activated]="currentUrl == '/'">Login</a>
+                <a routerLink="register" [class.activated]="currentUrl == '/register'">Register</a>
+            </div>
+            <div *ngIf="!isRoot" class="col-xs-8 col-sm-8 pull-right nav-items">
+                <span class="welcome">Welcome User</span>
+                <a routerLink="" class="btn">LogOut</a>
+            </div>
+        </div>
+    </div>
+</div>

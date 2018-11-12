@@ -1,0 +1,153 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-offset-1 col-sm-10 form-test">
+        <p class="title text-center">DASHBOARD</p>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 form-test-dependancies text-center">
+                <div class="row">
+                    <p class="dependence-text">To proceed further, you should download all the Selenium dependencies to your local machine. If not previously downloaded,<a href="../../assets/downloadables/SeleniumDependencies.zip" target="_self">click here.</a></p>
+                </div>
+            </div>
+            <div class="form-test-container" id="formContainer">
+                <div class="col-xs-12 col-sm-12 form-test-fields">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="label col-xs-12 col-sm-6">
+                                <label for="projName">Project Name</label>
+                                <p class="tool-tip" tooltipPlacement="top" tooltip="Name of the Project"></p>
+                            </div>
+                            <div class="input col-xs-12 col-sm-6">
+                                <input id="projName" [(ngModel)]="project">
+                            </div>
+                            <div class="label col-xs-12 col-sm-6">
+                                <label for="browserName">Browser</label>
+                                <p class="tool-tip" tooltipPlacement="top" tooltip="Browser in which you want to run your tests"></p>
+                            </div>
+                            <div class="input col-xs-12 col-sm-6">
+                                <select id="browserName" [(ngModel)]="browser">
+                                  <option value="chrome">Chrome</option>
+                                  <option value="safari">Safari</option>
+                                  <option value="ie">IE</option>
+                                  <option value="firefox">Firefox</option>
+                                </select>
+                            </div>
+                            <div class="label col-xs-12 col-sm-6">
+                                <label for="snapshot">Snapshot</label>
+                                <p class="tool-tip" tooltipPlacement="top" tooltip="Snapshot of the browser"></p>
+                            </div>
+                            <div class="input col-xs-12 col-sm-6">
+                                <select id="snapshot" [(ngModel)]="snapshot">
+                                <option value="browser">Browser</option>
+                              </select>
+                            </div>
+                            <div class="label col-xs-12 col-sm-6">
+                                <label for="hostName">Host Name</label>
+                                <p class="tool-tip" tooltipPlacement="top" tooltip="Ip address of the machine you want to run the tests in"></p>
+                            </div>
+                            <div class="input col-xs-12 col-sm-6">
+                                <input id="hostName" [(ngModel)]="host">
+                            </div>
+                            <div class="label col-xs-12 col-sm-6">
+                                <label for="sfdcProj">Is Salesforce project?</label>
+                                <p class="tool-tip" tooltipPlacement="top" tooltip="Is Salesforce project?"></p>
+                            </div>
+                            <div class="input col-xs-12 col-sm-6">
+                                <select for="sfdcProj" [(ngModel)]="isSfdcProj" (ngModelChange)="onChange($event)" name="sfdcSelect">
+                                    <option value=true>Yes</option>
+                                    <option value=false>No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="label col-xs-12 col-sm-6">
+                                <label for="release">Release Name</label>
+                                <p class="tool-tip" tooltipPlacement="top" tooltip="Name of the release"></p>
+                            </div>
+                            <div class="input col-xs-12 col-sm-6">
+                                <input id="release" [(ngModel)]="release">
+                            </div>
+                            <div class="label col-xs-12 col-sm-6">
+                                <label for="url">URL</label>
+                                <p class="tool-tip" tooltipPlacement="top" tooltip="Url of the website you want to test"></p>
+                            </div>
+                            <div class="input col-xs-12 col-sm-6">
+                                <input id="url" [(ngModel)]="url">
+                            </div>
+                            <div class="label col-xs-12 col-sm-6">
+                                <label for="snapshotType">Snapshot Type</label>
+                                <p class="tool-tip" tooltipPlacement="top" tooltip="Do you want snapshots"></p>
+                            </div>
+                            <div class="input col-xs-12 col-sm-6">
+                                <select id="snapshotType" [(ngModel)]="snapshotType">
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                            </select>
+                            </div>
+                            <div class="label col-xs-12 col-sm-6">
+                                <label for="localMachine">Local Machine</label>
+                                <p class="tool-tip" tooltipPlacement="top" tooltip="Region to run the tests"></p>
+                            </div>
+                            <div class="input col-xs-12 col-sm-6">
+                                <select for="localMachine" [(ngModel)]="localMachine">
+                          <option value="local">Local Machine</option>
+                          <option value="server">Server</option>
+                          </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-offset-0 col-xs-12 col-lg-offset-2 col-lg-8 form-test-uploads" [hidden]="showTestUpload">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 upload-option">
+                            <div class="col-xs-12 col-sm-6 col-lg-6 header col-xs-push-0">Upload Execution Manager</div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4 action">
+                                <input id="execMgr" (change)="onFileUpload($event)" type="file" class="btn" [(ngModel)]="execMgr">
+                            </div>
+                        </div>
+                        <!-- <div class="col-xs-12 col-sm-12 terms text-center">
+                            <input type="checkbox" name="tc" [(ngModel)]="isSfdcProj" required #tc="ngModel">
+                            <span>Is this a SFDC/Salesforce project ?</span>
+                        </div> -->
+                        <div class="col-xs-12 col-sm-12 upload-option" [hidden]="!showSfdcProj">
+                            <div class="col-xs-12 col-sm-6 col-lg-6 header col-xs-push-0">Upload Mapping</div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4 action">
+                                <input id="mapFile" (change)="onFileUpload($event)" type="file" class="btn">
+                            </div>
+                        </div>
+                        <div class="col-xs-offset-0 col-xs-12 col-lg-offset-3 col-lg-6 text-center">
+                            <button (click)="onProceed()" [disabled]="!showForm">Proceed</button>
+                            <p class="error-msg" [hidden]="!showFormError">Please fill in all details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-offset-0 col-xs-12 col-lg-offset-2 col-lg-8 form-final-uploads" [hidden]="!showTestUpload">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 upload-option">
+                        <div class="col-xs-12 col-sm-6 col-lg-6 header col-xs-push-0">Uploaded Execution Manager:</div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 action review-upload">
+                            <p>{{execMgrFileName}}</p><span class="upload-tick"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 upload-option">
+                        <div class="col-xs-12 col-sm-6 col-lg-6 header col-xs-push-0">Upload Test Creation Files</div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 action">
+                            <input id="testCreation" (change)="onFileUpload($event)" type="file" class="btn" multiple>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 form-test-results text-center" [hidden]="!showLastStep">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 terms-conditions">
+                        <input type="checkbox" name="tc" [(ngModel)]="isTCAccepted" required #tc="ngModel">
+                        <span>I ensure that I downloaded all dependant files and Selenium stand alone server is up and running in my local machine before proceeding.</span>
+                    </div>
+                    <div class="col-xs-offset-0 col-xs-12 col-lg-offset-3 col-lg-6">
+                        <button (click)="onSubmit()" [disabled]="!isTCAccepted">Save & Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
